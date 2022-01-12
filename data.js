@@ -113,6 +113,7 @@ const elenco = [
 	}
 ];
 
+//array solo animali
 const elencoAnimali = elenco.filter((elemento) => {
 	if(elemento.type == "animal"){
 		return true
@@ -121,6 +122,7 @@ const elencoAnimali = elenco.filter((elemento) => {
 	} 
 });
 
+//array solo vegetali
 const elencoVegetali = elenco.filter((elemento) => {
 	if(elemento.type == "vegetable"){
 		return true
@@ -129,6 +131,7 @@ const elencoVegetali = elenco.filter((elemento) => {
 	} 
 });
 
+//array solo icone persone
 const elencoUser = elenco.filter((elemento) => {
 	if(elemento.type == "user"){
 		return true
@@ -139,11 +142,13 @@ const elencoUser = elenco.filter((elemento) => {
 
 
 let creaBox = document.getElementById("box-container");
- 
+
+//forEach che genera per ogni elemento dell'array un box
 elenco.forEach(elemento => {
 	generaBox(elemento, creaBox);
 });
 
+//gestione del cambio di scelta tramite una select, in base al value della select cambia le icone generate basandosi sugli array filtrati
 let scelta = document.getElementById("type-selection");
 scelta.addEventListener( "change", function() {
 	const sceltaTipo = this.value;
@@ -175,7 +180,7 @@ scelta.addEventListener( "change", function() {
 //funzione genera box con elementi di un'array
 function generaBox(elemento, creaBox){
 	creaBox.innerHTML += `
-		<div class="col text-center box">
+		<div class="col- m-4 d-flex flex-column justify-content-center text-center box">
 			<i id="${elemento.type}" class="${elemento.family} ${elemento.prefix}${elemento.name} ${elemento.type}" style="color:${elemento.color}"></i>
 			<h6>${elemento.name.toUpperCase()}</h6>
 		</div>  

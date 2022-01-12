@@ -1,4 +1,23 @@
+.ms_select-box{
+    padding: 20px 0;
+    background-color: #29B1DD;
+    color: white;
+}
+h1{
+    color: #29B1DD;
+}
+#box-container{
+    background-color: #DDDDDD;
+    height: 1000px;
+}
+
 .box{
-    height: 80px;
-    line-height: 40px;
+    width: 17%;
+    height: 125px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 2px 2px 1px grey;
+}
+.box > i{
+    font-size: 2rem;
 }
