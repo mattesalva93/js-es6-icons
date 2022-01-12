@@ -4,112 +4,112 @@ const elenco = [
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'fas',
-		color: 'orange'
+		color: randomColore ()
 	},
 	{
 		name: 'crow',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'fas',
-		color: 'orange'
+		color: randomColore ()
 	},
 	{
 		name: 'dog',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'fas',
-		color: 'orange'
+		color: randomColore ()
 	},
 	{
 		name: 'dove',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'fas',
-		color: 'orange'
+		color: randomColore ()
 	},
 	{
 		name: 'dragon',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'fas',
-		color: 'orange'
+		color: randomColore ()
 	},
 	{
 		name: 'horse',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'fas',
-		color: 'orange'
+		color: randomColore ()
 	},
 	{
 		name: 'hippo',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'fas',
-		color: 'orange'
+		color: randomColore ()
 	},
 	{
 		name: 'fish',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'fas',
-		color: 'orange'
+		color: randomColore ()
 	},
 	{
 		name: 'carrot',
 		prefix: 'fa-',
 		type: 'vegetable',
 		family: 'fas',
-		color: 'green'
+		color: randomColore ()
 	},
 	{
 		name: 'apple-alt',
 		prefix: 'fa-',
 		type: 'vegetable',
 		family: 'fas',
-		color: 'green'
+		color: randomColore ()
 	},
 	{
 		name: 'lemon',
 		prefix: 'fa-',
 		type: 'vegetable',
 		family: 'fas',
-		color: 'green'
+		color: randomColore ()
 	},
 	{
 		name: 'pepper-hot',
 		prefix: 'fa-',
 		type: 'vegetable',
 		family: 'fas',
-		color: 'green'
+		color: randomColore ()
 	},
 	{
 		name: 'user-astronaut',
 		prefix: 'fa-',
 		type: 'user',
 		family: 'fas',
-		color: 'blue'
+		color: randomColore ()
 	},
 	{
 		name: 'user-graduate',
 		prefix: 'fa-',
 		type: 'user',
 		family: 'fas',
-		color: 'blue'
+		color: randomColore ()
 	},
 	{
 		name: 'user-ninja',
 		prefix: 'fa-',
 		type: 'user',
 		family: 'fas',
-		color: 'blue'
+		color: randomColore ()
 	},
 	{
 		name: 'user-secret',
 		prefix: 'fa-',
 		type: 'user',
 		family: 'fas',
-		color: 'blue'
+		color: randomColore ()
 	}
 ];
 
@@ -171,13 +171,24 @@ scelta.addEventListener( "change", function() {
 
 
 
-
-
+//lista funzioni 
+//funzione genera box con elementi di un'array
 function generaBox(elemento, creaBox){
 	creaBox.innerHTML += `
 		<div class="col text-center box">
-			<i class="${elemento.family} ${elemento.prefix}${elemento.name} ${elemento.type}" style="color:${elemento.color}"></i>
+			<i id="${elemento.type}" class="${elemento.family} ${elemento.prefix}${elemento.name} ${elemento.type}" style="color:${elemento.color}"></i>
 			<h6>${elemento.name.toUpperCase()}</h6>
 		</div>  
 	`
+}
+
+//funzione genera colore esadecimale randomizzato
+function randomColore (){
+	esadecimaleArray = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+	arrayNuovoColore = [];
+	for (i=0; i < 6; i++){
+		arrayNuovoColore.push(esadecimaleArray[Math.floor(Math.random()*esadecimaleArray.length)]);
+	}
+	let nuovoColore = "#" + arrayNuovoColore.join("");
+	return nuovoColore;	
 }
