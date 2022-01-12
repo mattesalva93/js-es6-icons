@@ -148,24 +148,21 @@ let scelta = document.getElementById("type-selection");
 scelta.addEventListener( "change", function() {
 	const sceltaTipo = this.value;
 	console.log(sceltaTipo);
-	;
+	creaBox.innerHTML = "";
+
 	if (sceltaTipo == "all"){
-		creaBox = "";
 		elenco.forEach(elemento => {
 			generaBox(elemento, creaBox);
 		});
 	}else if(sceltaTipo == "animal"){
-		creaBox = "";
 		elencoAnimali.forEach(elemento => {
 			generaBox(elemento, creaBox);
 		});
 	}else if(sceltaTipo == "vegetable"){
-		creaBox = "";
 		elencoVegetali.forEach(elemento => {
 			generaBox(elemento, creaBox);
 		});
 	}else{
-		creaBox = "";
 		elencoUser.forEach(elemento => {
 			generaBox(elemento, creaBox);
 		});
@@ -176,8 +173,7 @@ scelta.addEventListener( "change", function() {
 
 
 
-function generaBox(elemento,creaBox){
-
+function generaBox(elemento, creaBox){
 	creaBox.innerHTML += `
 		<div class="col text-center box">
 			<i class="${elemento.family} ${elemento.prefix}${elemento.name} ${elemento.type}" style="color:${elemento.color}"></i>
