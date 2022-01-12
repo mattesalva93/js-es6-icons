@@ -150,35 +150,27 @@ scelta.addEventListener( "change", function() {
 	console.log(sceltaTipo);
 	;
 	if (sceltaTipo == "all"){
+		creaBox = "";
 		elenco.forEach(elemento => {
 			generaBox(elemento, creaBox);
 		});
 	}else if(sceltaTipo == "animal"){
+		creaBox = "";
 		elencoAnimali.forEach(elemento => {
 			generaBox(elemento, creaBox);
 		});
 	}else if(sceltaTipo == "vegetable"){
+		creaBox = "";
 		elencoVegetali.forEach(elemento => {
 			generaBox(elemento, creaBox);
 		});
 	}else{
+		creaBox = "";
 		elencoUser.forEach(elemento => {
 			generaBox(elemento, creaBox);
 		});
 	}
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
